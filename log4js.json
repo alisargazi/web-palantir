@@ -1,0 +1,14 @@
+{
+  "appenders": [
+    { 
+      "type": "console"
+    },
+    {
+      "type": "file", 
+      "filename": "logs/log4js.log"
+    }
+  ],
+  "levels": {
+        "[all]": "ERROR"
+  }
+}
