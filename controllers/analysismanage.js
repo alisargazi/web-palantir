@@ -22,7 +22,7 @@ module.exports.post = function(req, res, next) {
   console.log(url);
   var params = req.body.params || req.body.data;
   console.log(params);
-  request.post(url).set('Content-Type', 'application/json').send(params).end(function(err, resp){
+  request.post(url).set().set('Content-Type', 'application/json').send(params).end(function(err, resp){
     
     if(err){
       console.log(err);
