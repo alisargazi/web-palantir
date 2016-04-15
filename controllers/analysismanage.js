@@ -10,7 +10,7 @@ var request = require('superagent');
 /* 执行get请求系统 */
 module.exports.get = function(req, res, next) {
     request.get(config.PALANTIR_URL).query(req.query).end(function(err, resp){
-        res.json(JSON.parse(resp.text));       
+        res.json(JSON.parse(resp.text));
       });
 };
 

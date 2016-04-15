@@ -7,6 +7,10 @@
   <script src="/static/lib/metronic/4.5.1/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
   <script src="/static/lib/metronic/4.5.1/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="/static/lib/socket.io/socket.io.js"></script>
+  <script> 
+    var loginName = "{{session.currentUser.login_name}}";
+    var sessId = '{{session.id}}';
+  </script>
   <script src="/static/lib/metronic/4.5.1/assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
   <style>
     
@@ -16,53 +20,7 @@
     }
 
   </style>
-  <script>
-    var loginName = "{{session.currentUser.login_name}}";
-    $(document).ready(function(){
-      
-      $.browser = $.browser || {}; 
-      $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
-      $.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
-      $.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
-      $.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());     
-      $.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());   
-      
-      var socket = io.connect('/');
-      var sessId = '{{session.id}}';
-      
-      socket.on("otherLogin", function(sessionId){
-        if(sessId === sessionId){
-          
-          if($.browser.mozilla){
-            alert("你的账号在其他位置登录，你已被迫下线！如需帮助请联系管理员。");
-            window.location.reload();
-          }else{
-            bootbox.dialog({
-                message: "你的账号在其他位置登录，你已被迫下线！如需帮助请联系管理员。",
-                title: "提示",
-                buttons: {
-                  success: {
-                    label: "确定",
-                    className: "green",
-                    callback: function() {
-                      window.location.reload();
-                    }
-                  }
-                },
-                closeButton: false
-            });             
-          }
-   
-        }
-      });
-      
-    });
-    
-    function doSignout(){
-      window.location.href = "/sign/signout";
-    }
-    
-  </script>
+  <script src="/static/scripts/other-login.js" type="text/javascript"></script>
 </head>
 <body>
   <iframe id="flexFrame" src="flex/AnalysisWeb.html" frameborder="0" style="width: 100%;height: 99%;"></iframe>
