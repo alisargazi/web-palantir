@@ -1,4 +1,5 @@
 
+var config = require("../config/config");
 /**
  * 跳转到分析工具页
  */

@@ -8,6 +8,14 @@ $(document).ready(function(){
 });
 
 function init(){
+  
+  openMask();
+  
+  window.setTimeout(function(){
+    closeMask();
+    $("#flexFrame").show();
+  }, 3000);
+  
   $.browser = $.browser || {}; 
   $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
   $.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
@@ -17,7 +25,6 @@ function init(){
   
   var socket = io.connect('/');
 
-  
   socket.on("otherLogin", function(sessionId){
     if(sessId === sessionId){
       
@@ -38,7 +45,7 @@ function init(){
               }
             },
             closeButton: false
-        });             
+        });
       }
 
     }
@@ -47,4 +54,29 @@ function init(){
 
 function doSignout(){
   window.location.href = "/sign/signout";
+}
+
+function openMask(){
+   $.blockUI({
+        message: "<img src='/static/img/ajax-loading.gif'>正在加载，请稍等... ...",
+        baseZ: 1000,
+        css: {
+            border: '0',
+            padding: '0',
+            backgroundColor: 'none'
+        },
+        overlayCSS: {
+            backgroundColor: '#555',
+            opacity: 0.1,
+            cursor: 'wait'
+        }
+    });           
+}
+
+function closeMask(){
+  $.unblockUI();  
+}
+
+function swfLoaded(){
+  closeMask();
 }
