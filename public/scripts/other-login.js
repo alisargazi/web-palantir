@@ -27,7 +27,6 @@ function init(){
 
   socket.on("otherLogin", function(sessionId){
     if(sessId === sessionId){
-      
       if($.browser.mozilla){
         alert("你的账号在其他位置登录，你已被迫下线！如需帮助请联系管理员。");
         window.location.reload();
