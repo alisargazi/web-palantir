@@ -4961,3 +4961,41 @@ TypeError: request.set is not a function
     at F:\node\palantir-web\node_modules\express\lib\router\index.js:280:7
     at Function.process_params (F:\node\palantir-web\node_modules\express\lib\router\index.js:330:12)
 [2016-04-14 16:12:59.034] [ERROR] http - ::1 - - "POST /proxy/analysismanage/search/homeSearch HTTP/1.1" 500 18 "" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0"
+[2016-04-27 15:01:27.910] [ERROR] app - Something went wrong: [TypeError: Cannot read property 'data' of undefined]
+TypeError: Cannot read property 'data' of undefined
+    at module.exports.requestLog (F:\prodaas\palantir-web\controllers\api_access_log.js:19:31)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\prodaas\palantir-web\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:277:22
+    at param (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+[2016-04-27 15:01:27.959] [ERROR] http - ::1 - - "POST /proxy/analysismanage/graphmanage/getGraphDatas HTTP/1.1" 500 18 "" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0"
+[2016-04-27 15:06:59.678] [ERROR] app - Something went wrong: [TypeError: Cannot read property 'data' of undefined]
+TypeError: Cannot read property 'data' of undefined
+    at module.exports.requestLog (F:\prodaas\palantir-web\controllers\api_access_log.js:19:31)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\prodaas\palantir-web\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:277:22
+    at param (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+[2016-04-27 15:06:59.731] [ERROR] http - ::1 - - "POST /proxy/analysismanage/graphmanage/getGraphDatas HTTP/1.1" 500 18 "" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0"

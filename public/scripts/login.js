@@ -71,9 +71,9 @@ var Login = function() {
 
             // init background slide images
             $('.login-bg').backstretch([
-                "/static/lib/metronic/4.5.1/assets/pages/img/login/bg1.jpg",
-                "/static/lib/metronic/4.5.1/assets/pages/img/login/bg2.jpg",
-                "/static/lib/metronic/4.5.1/assets/pages/img/login/bg3.jpg"
+                "/static/lib/metronic/4.5.1/assets/pages/img/login/bg1.jpg"//,
+                //"/static/lib/metronic/4.5.1/assets/pages/img/login/bg2.jpg",
+                //"/static/lib/metronic/4.5.1/assets/pages/img/login/bg3.jpg"
                 ], {
                   fade: 1000,
                   duration: 8000

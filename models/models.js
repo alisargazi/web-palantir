@@ -97,4 +97,33 @@ exports.SysLoginLog = sequelize.define(
 	}
 );
 
+
+//接口访问日志表
+exports.ApiAccessLog = sequelize.define(
+	"ApiAccessLog",
+	{
+    id: {
+      type: Sequelize.STRING,
+      primaryKey: true
+    },
+    api_url: Sequelize.STRING,
+    api_params: Sequelize.STRING,
+    client_ip: Sequelize.STRING,
+    access_time: {
+      type: Sequelize.DATE,
+      get: function(){
+        return moment(this.getDataValue('access_time')).format(config.DATE_FORMAT);
+      }
+    },
+    key_value: Sequelize.STRING,
+    res_code: Sequelize.STRING,
+    cost_time: Sequelize.INTEGER
+	},
+	{
+		tableName: "api_access_log",
+		timestamps: false
+	}
+);
+
+
 exports.sequelize = sequelize;

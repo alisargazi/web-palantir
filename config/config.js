@@ -17,4 +17,5 @@ exports.REDIS_DB_PASS = 1;
 exports.REDIS_PREFIX = 'sess:';
 
 //后台数据服务的根路径地址
-exports.PALANTIR_URL = "http://192.168.1.206:8080/analysis-tools/";
+//exports.PALANTIR_URL = "http://192.168.1.206:8080/analysis-tools/";
+exports.PALANTIR_URL = "http://192.168.1.12:9000/";
