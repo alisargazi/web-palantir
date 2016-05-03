@@ -29,7 +29,6 @@ nunjucks.configure('views', {
 app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
