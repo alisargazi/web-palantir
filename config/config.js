@@ -16,6 +16,13 @@ exports.REDIS_DB_INDEX = 1;
 exports.REDIS_DB_PASS = 1;
 exports.REDIS_PREFIX = 'sess:';
 
+//mongodb 相关配置
+exports.MONGO_HOST = "54.222.206.70";
+exports.MONGO_DBNAME = "log_db";
+exports.MONGO_USER = "log_user";
+exports.MONGO_PASSWORD = "prodaas_mongo";
+exports.MONGO_PORT = 27017;
+
 //后台数据服务的根路径地址
 //exports.PALANTIR_URL = "http://192.168.1.206:8080/analysis-tools/";
-exports.PALANTIR_URL = "http://192.168.1.12:9000/";
+exports.PALANTIR_URL = "http://192.168.1.206:8080/analysis-tools/";

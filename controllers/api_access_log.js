@@ -1,7 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
-var models = require('../models/models');
+var mongoModels = require('../models/mogon_models');
 var logger = require('log4js').getLogger("apilog");
 var uuid = require('node-uuid'); 
 var moment = require('moment'); 
@@ -22,15 +22,25 @@ module.exports.requestLog = function(req, res, next) {
     "id": uuid.v4(),
     "api_url": url,
     "client_ip": getClientIp(req),
-    "access_time": moment().format("YYYY-MM-DD HH:mm:ss"),
-    "api_params" : JSON.stringify(params),
-    "key_value": 'palantir-web'
+    "access_time": moment().format(config.DATE_FORMAT),
+    "api_params" : params,
+    "key_value": 'palantir-web',
+    "user_id": req.session.currentUser.id
   }
-  
+   
   req.__requestLogId = apiLog.id;
   
   //无论日志是否记录成功，都进行接口访问
-  models.ApiAccessLog.create(apiLog).then(function(){});
+  //models.ApiAccessLog.create(apiLog).then(function(){});
+  
+  //在mongo中进行记录
+  mongoModels.AccessLog.create(apiLog, function(err, log){
+    if(err){
+      console.log(err);
+    }   
+    req.__log = log;
+  })
+  
   next();
   
 };
@@ -38,18 +48,14 @@ module.exports.requestLog = function(req, res, next) {
 /**
  * 记录日志完成状态
  */
-module.exports.completeLog = function(req, resCode){
-  var apiLog = {
-    id: req.__requestLogId,
-    res_code : resCode,
-    cost_time : Date.now() - req._startTime
+module.exports.completeLog = function(req, resCode){  
+  if(req.__log){
+    mongoModels.AccessLog.findByIdAndUpdate(req.__log._id, { $set: { res_code: resCode, cost_time : Date.now() - req._startTime }}, function (err, log) {
+      if (err){
+        console.log(err);
+      } 
+    });      
   }
-  
-  models.ApiAccessLog.upsert(apiLog, {
-    where: {
-      id : req.__requestLogId
-    }
-  }).then(function(){});  
 }
 
 

@@ -21,9 +21,9 @@ module.exports.post = function(req, res, next) {
   var urls = req.url.split("/");
   var url = config.PALANTIR_URL + urls[2] + "/" + urls[3];
   //logger.debug(url);
-  console.log(url);
+  //console.log(url);
   var params = req.body || {};
-  console.log(params);
+  //console.log(params);
   request.post(url).set('Content-Type', 'application/json').send(params).end(function(err, resp){
     
     if(err){
