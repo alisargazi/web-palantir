@@ -6,7 +6,6 @@ var Dashboard = function() {
             
         }
     };
-
 }();
 
 if (App.isAngularJsApp() === false) { 

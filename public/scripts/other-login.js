@@ -11,10 +11,10 @@ function init(){
   
   openMask();
   
-  window.setTimeout(function(){
-    closeMask();
-    $("#flexFrame").show();
-  }, 3000);
+  // window.setTimeout(function(){
+  //   closeMask();
+  //   $("#flexFrame").show();
+  // }, 3000);
   
   $.browser = $.browser || {}; 
   $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
@@ -78,4 +78,5 @@ function closeMask(){
 
 function swfLoaded(){
   closeMask();
+  $("#flexFrame").show();
 }

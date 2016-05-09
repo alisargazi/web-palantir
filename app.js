@@ -62,7 +62,6 @@ app.use("/flex", express.static(path.join(__dirname, 'views/flex')));
 
 //登录验证
 app.use('/', loginAuth);
-
 app.use('/index', index);
 app.use('/login', login);
 app.use('/sign', sign);

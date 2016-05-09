@@ -23,9 +23,14 @@ module.exports = function(req, res, next){
       //为登录用户跳转到登录页面
       res.redirect("/login");
     }else{
+      
       logger.debug("用户已经登录！");
-      //这里应该校验用户的权限属性
-      next();
+      if(path == "/"){
+        res.redirect("/index");
+      }else{
+        //这里应该校验用户的权限属性
+        next();        
+      }
     }    
   }
 
