@@ -28,6 +28,7 @@ exports.User = sequelize.define(
       primaryKey: true
     },
     login_name: Sequelize.STRING,
+    nick_name:Sequelize.STRING,
     password: Sequelize.STRING,
     user_role: Sequelize.STRING,
     create_time: {

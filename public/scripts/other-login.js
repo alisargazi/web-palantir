@@ -8,7 +8,6 @@ $(document).ready(function(){
 });
 
 function init(){
-  
   openMask();
   
   // window.setTimeout(function(){
@@ -56,6 +55,7 @@ function doSignout(){
 }
 
 function openMask(){
+  
    $.blockUI({
         message: "<img src='/static/img/ajax-loading.gif'>正在加载，请稍等... ...",
         baseZ: 1000,
@@ -69,14 +69,13 @@ function openMask(){
             opacity: 0.1,
             cursor: 'wait'
         }
-    });           
+    }); 
 }
 
 function closeMask(){
-  $.unblockUI();  
+  $.unblockUI();
 }
 
-function swfLoaded(){
+function onLoaded(){
   closeMask();
-  $("#flexFrame").show();
 }
