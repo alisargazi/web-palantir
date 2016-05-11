@@ -84,6 +84,7 @@ exports.SysLoginLog = sequelize.define(
     },
     user_id: Sequelize.STRING,
     operation_flag: Sequelize.STRING,
+    sys_name: Sequelize.STRING,
     client_ip: Sequelize.STRING,
     operation_time: {
       type: Sequelize.DATE,

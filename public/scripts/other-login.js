@@ -1,6 +1,11 @@
 
 $(document).ready(function(){
   try{
+
+    // $(document).bind('keydown', 'Ctrl+a', function (e){
+    //   e.preventDefault();
+    // });
+        
     init();
   }catch(err){
     consel.log(err);
@@ -8,12 +13,8 @@ $(document).ready(function(){
 });
 
 function init(){
+    
   openMask();
-  
-  // window.setTimeout(function(){
-  //   closeMask();
-  //   $("#flexFrame").show();
-  // }, 3000);
   
   $.browser = $.browser || {}; 
   $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
@@ -45,7 +46,6 @@ function init(){
             closeButton: false
         });
       }
-
     }
   });  
 }

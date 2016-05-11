@@ -100,7 +100,7 @@ var cleanAlreadyOtherUserSession = function(loginName, appName, currentSessionId
     //遍历所有sessionid 后执行
     ep.after('hasLogin', keys.length, function (list) {
       console.log("判断登录后的结果为：");
-      console.log(list);
+      //console.log(list);
       for(var i = 0; i < list.length; i++){
         if(list[i] === true){
           callback(true);
