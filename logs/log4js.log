@@ -70,3 +70,78 @@ Error: Not Found
     at onstat (F:\prodaas\palantir-web\node_modules\send\index.js:621:26)
     at FSReqWrap.oncomplete (fs.js:82:15)
 [2016-05-10 17:46:36.933] [ERROR] http - undefined - - "GET /static/jquery.hotkey/jquery.hotkeys.js HTTP/1.1" 404 15 "http://localhost:3001/index" "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)"
+[2016-05-11 16:07:06.961] [ERROR] app - Something went wrong: { [Error: Not Found] status: 404 }
+Error: Not Found
+    at F:\prodaas\palantir-web\app.js:72:13
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at module.exports (F:\prodaas\palantir-web\middleware\login_auth.js:32:9)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at F:\prodaas\palantir-web\app.js:57:5
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at F:\prodaas\palantir-web\node_modules\express-session\index.js:432:7
+    at Command.callback (F:\prodaas\palantir-web\node_modules\connect-redis\lib\connect-redis.js:148:14)
+    at normal_reply (F:\prodaas\palantir-web\node_modules\connect-redis\node_modules\redis\index.js:662:21)
+    at RedisClient.return_reply (F:\prodaas\palantir-web\node_modules\connect-redis\node_modules\redis\index.js:722:9)
+[2016-05-11 16:07:07.087] [ERROR] http - ::1 - - "GET /favicon.ico HTTP/1.1" 404 15 "http://localhost:3001/flex/AnalysisWeb.swf" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+[2016-05-11 16:07:09.584] [ERROR] app - Something went wrong: { [Error: Not Found] status: 404 }
+Error: Not Found
+    at F:\prodaas\palantir-web\app.js:72:13
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at module.exports (F:\prodaas\palantir-web\middleware\login_auth.js:32:9)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at serveStatic (F:\prodaas\palantir-web\node_modules\serve-static\index.js:74:16)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at F:\prodaas\palantir-web\app.js:57:5
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+[2016-05-11 16:07:09.684] [ERROR] http - ::1 - - "POST /flex/nullmodelmanage/queryModelInfo HTTP/1.1" 404 15 "http://localhost:3001/flex/AnalysisWeb.swf" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+[2016-05-11 16:07:15.227] [ERROR] app - Something went wrong: { [Error: Not Found] status: 404 }
+Error: Not Found
+    at F:\prodaas\palantir-web\app.js:72:13
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at module.exports (F:\prodaas\palantir-web\middleware\login_auth.js:32:9)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at serveStatic (F:\prodaas\palantir-web\node_modules\serve-static\index.js:74:16)
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:271:10)
+    at F:\prodaas\palantir-web\app.js:57:5
+    at Layer.handle [as handle_request] (F:\prodaas\palantir-web\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:312:13)
+    at F:\prodaas\palantir-web\node_modules\express\lib\router\index.js:280:7
+[2016-05-11 16:07:15.337] [ERROR] http - ::1 - - "POST /flex/nullsearch/modelList HTTP/1.1" 404 15 "http://localhost:3001/flex/AnalysisWeb.swf" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"

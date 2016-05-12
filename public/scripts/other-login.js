@@ -70,6 +70,11 @@ function openMask(){
             cursor: 'wait'
         }
     }); 
+    
+    //在每次添加蒙版时，自动增加一个函数用来在超时后取消模板
+    window.setTimeout(function(){
+      closeMask();
+    }, 15000);
 }
 
 function closeMask(){

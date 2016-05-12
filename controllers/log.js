@@ -6,6 +6,7 @@ var logger = require('log4js').getLogger("log");
 var uuid = require('node-uuid'); 
 var moment = require('moment'); 
 var config = require('../config/config'); 
+var commonUtil = require('../utils/common_util'); 
 
 /**
  * 记录日志
@@ -22,8 +23,9 @@ var getLog = function(req, type){
   
   var log = {
     user_id: req.session.currentUser.id,
-    client_ip: getClientIp(req),
+    client_ip: commonUtil.getClientIp(req),
     operation_flag: type,
+    sys_name: config.WEB_NAME,
     operation_time: moment().format("YYYY-MM-DD HH:mm:ss")
   };
   

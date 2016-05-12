@@ -99,7 +99,7 @@ var cleanAlreadyOtherUserSession = function(loginName, appName, currentSessionId
 
     //遍历所有sessionid 后执行
     ep.after('hasLogin', keys.length, function (list) {
-      console.log("判断登录后的结果为：");
+      //console.log("判断登录后的结果为：");
       //console.log(list);
       for(var i = 0; i < list.length; i++){
         if(list[i] === true){
@@ -114,13 +114,13 @@ var cleanAlreadyOtherUserSession = function(loginName, appName, currentSessionId
     
     //干掉其他位置的登录用户信息
     ep.on("kill_session", function(sessionId){
-      console.log("干掉 " + sessionId);
+      //console.log("干掉 " + sessionId);
       sessionStore.destroy(sessionId, function(error){
         if(error){
           console.log("销毁他处登录的session 出错 " + error);
         }
         
-        console.log("干掉了session  " + sessionId);
+        //console.log("干掉了session  " + sessionId);
         ep.emit("hasLogin", true);
         
         //向浏览器推送存在其他登录的事件
@@ -145,7 +145,7 @@ var cleanAlreadyOtherUserSession = function(loginName, appName, currentSessionId
         if(session.currentUser){
           
           //判断登录有登录账号的登录名与当前登录名以及登录的应用名称是否匹配，如果匹配则干掉对应的sessionId
-          console.log("发现登录名为 " + session.currentUser.login_name + "   登录的应用名称为 " + session.currentApp);
+          //console.log("发现登录名为 " + session.currentUser.login_name + "   登录的应用名称为 " + session.currentApp);
           if(session.currentUser.login_name === loginName && session.currentApp === appName){
             //在其他位置存在登录，则干掉该session
             ep.emit("kill_session", sessionId);
