@@ -17,6 +17,7 @@ var config = require("./config/config");
 var login = require('./routes/login');
 var index = require('./routes/index');
 var proxy = require('./routes/proxy');
+var keepalive = require('./routes/keepalive');
 
 var app = express();
 
@@ -66,6 +67,7 @@ app.use('/index', index);
 app.use('/login', login);
 app.use('/sign', sign);
 app.use("/proxy", proxy);
+app.use("/keepalive", keepalive);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

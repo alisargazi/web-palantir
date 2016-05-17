@@ -15,6 +15,21 @@ $(document).ready(function(){
 function init(){
     
   openMask();
+
+  $.sessionTimeout({
+      title: '会话超时',
+      message: '由于您太长时间没有进行操作，您将被系统下线.',
+      keepAliveUrl: '/keepalive',
+      redirUrl: '/login',
+      logoutUrl: '/sign/signout',
+      logoutButton: '退出系统',
+      keepAliveButton: '保持连接',      
+      warnAfter: 600000, //10分钟没有操作则弹出提示框
+      redirAfter: 610000, //提示框弹出10秒后，退出系统,
+      countdownMessage: ' {timer} 秒后退出系统.',
+      ignoreUserActivity: true,
+      countdownBar: true
+  });
   
   $.browser = $.browser || {}; 
   $.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());

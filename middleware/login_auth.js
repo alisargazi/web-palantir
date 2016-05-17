@@ -7,8 +7,9 @@ var config = require("../config/config");
 module.exports = function(req, res, next){
   logger.debug("进入用户登录拦截器");
   var path = req.path;
-    
+    console.log(path);
   if(path.indexOf("/sign/") == 0 || path.indexOf("/static/") == 0 || path.indexOf("/socket.io/") == 0){
+    console.log(path);
     next();
   }else{
     
