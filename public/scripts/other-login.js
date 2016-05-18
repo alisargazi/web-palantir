@@ -1,14 +1,9 @@
 
 $(document).ready(function(){
-  try{
-
-    // $(document).bind('keydown', 'Ctrl+a', function (e){
-    //   e.preventDefault();
-    // });
-        
+  try{        
     init();
   }catch(err){
-    consel.log(err);
+    console.log(err);
   }
 });
 
@@ -99,3 +94,48 @@ function closeMask(){
 function onLoaded(){
   closeMask();
 }
+
+function isIE(){	
+  if (navigator.userAgent.toLowerCase().indexOf("msie")>-1){
+    return true;
+  }else if (window.ActiveXObject || "ActiveXObject" in window){
+    return true;
+  }
+  return false;
+}
+            
+//禁用浏览器ctrl+滚轮快捷键
+function scrollFunc(e)
+{
+  if (!e.ctrlKey ){
+    return;
+  }
+  
+  if (e && e.preventDefault){
+    e.preventDefault();	
+  }else{
+    // A shortcut for stoping the browser action in IE
+    window.event.returnValue = false;
+  }
+}
+            
+function stopDefault(e) {
+  // Prevent the default browser action (W3C)
+  e=e || window.event;
+  if (e && e.ctrlKey && e.keyCode && (e.keycode==65 || e.keyCode==107 || e.keyCode==109)){
+    if ( e && e.preventDefault ){
+      e.preventDefault();
+    }else{
+      // A shortcut for stoping the browser action in IE
+      window.event.returnValue = false;
+    }
+  }
+}
+			
+/*注册事件*/
+if(document.addEventListener){
+    document.addEventListener('DOMMouseScroll',scrollFunc,false);
+    document.addEventListener('keyup', stopDefault , false);
+}//W3C
+window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari
+window.onkeyup=document.onkeyup=stopDefault;//IE/Opera/Chrome/Safari
